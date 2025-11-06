@@ -1,0 +1,44 @@
+/* --- Estilos del Header --- */
+.header {
+    background-color: rgb(0, 0, 0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    padding: 16px; /* p-4 en Tailwind */
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* --- Estilos del Logo --- */
+.logo {
+    font-size: 24px; /* text-2xl */
+    font-weight: bold;
+    color: #2563eb; /* blue-600 */
+}
+
+/* --- Estilos de NavLinks --- */
+.navList {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 16px; /* space-x-4: separa los elementos */
+}
+
+.navLink {
+    text-decoration: none; /* Quita el subrayado predeterminado */
+    color: #ffffff; /* gray-700 */
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navLink:hover {
+    color: #2563eb; /* blue-600 al pasar el ratón */
+}
