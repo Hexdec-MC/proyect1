@@ -7,7 +7,14 @@ export async function GET() {
     FROM sales s
     LEFT JOIN users u ON s.user_id = u.id
   `);
-  return NextResponse.json(rows);
+
+  // 🔹 Convertir total a número para evitar errores en toFixed
+  const sales = (rows as any[]).map(s => ({
+    ...s,
+    total: Number(s.total),
+  }));
+
+  return NextResponse.json(sales);
 }
 
 export async function POST(request: Request) {
@@ -16,5 +23,9 @@ export async function POST(request: Request) {
     'INSERT INTO sales (invoice_number, user_id, client_name, total) VALUES (?, ?, ?, ?)',
     [invoice_number, user_id, client_name, total]
   );
-  return NextResponse.json({ message: 'Venta registrada', id: (result as any).insertId });
+
+  return NextResponse.json({
+    message: 'Venta registrada',
+    id: (result as any).insertId,
+  });
 }

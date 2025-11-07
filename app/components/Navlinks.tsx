@@ -7,7 +7,8 @@ const NavLinks = () => {
   const links = [
     { name: 'Inicio', href: '/' },
     { name: 'Productos', href: '/pages/productos' },   // ← Correcto
-    { name: 'Contacto', href: '/pages/contacto' },     // ← Correcto
+    { name: 'Compras', href: '/pages/compra' },     // ← Correcto
+    { name: 'Venta', href: '/pages/venta' },     // ← Correcto
   ];
 
   return (
